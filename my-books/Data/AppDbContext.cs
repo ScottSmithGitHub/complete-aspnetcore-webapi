@@ -25,7 +25,7 @@ namespace my_books.Data
               .WithMany(ba => ba.Book_Authors)
               .HasForeignKey(bi => bi.AuthorId);
 
-            //modelBuilder.Entity<Log>().HasKey(n => n.Id);
+            modelBuilder.Entity<Log>().HasKey(n => n.Id);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -34,6 +34,6 @@ namespace my_books.Data
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book_Author> Books_Authors { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
-
+        public DbSet<Log> Logs { get; set; }
     }
 }
